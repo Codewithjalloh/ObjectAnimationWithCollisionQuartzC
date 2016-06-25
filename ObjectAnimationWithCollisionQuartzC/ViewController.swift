@@ -28,6 +28,21 @@ class ViewController: UIViewController {
     
     
     override func viewDidAppear(animated: Bool) {
+        let max: CGRect = UIScreen.mainScreen().bounds
+        let snap1 = UISnapBehavior(item: self.mobBallgravity, snapToPoint: CGPointMake(max.size.width/2, max.size.height/2 - 50))
+        
+        let snap2 = UISnapBehavior(item: self.hackBombPush, snapToPoint: CGPointMake(max.size.width/2, max.size.height/2))
+        
+        let snap3 = UISnapBehavior(item: self.ironAttachment, snapToPoint: CGPointMake(max.size.width/2, max.size.height/2 + 50))
+        
+        snap1.damping = 1
+        snap2.damping = 2
+        snap3.damping = 4
+        
+        animator.addBehavior(snap1)
+        animator.addBehavior(snap2)
+        animator.addBehavior(snap3)
+        
         
     }
     
@@ -69,7 +84,16 @@ class ViewController: UIViewController {
     
     @IBAction func attchmentButton(sender: AnyObject) {
         animator.removeAllBehaviors()
+        let anchorPoint = CGPointMake(self.ironAttachment.center.x, self.ironAttachment.center.y)
+        attachmentBahavior = UIAttachmentBehavior(item: self.ironAttachment, attachedToAnchor: anchorPoint)
         
+        attachmentBahavior!.frequency = 0.5
+        attachmentBahavior!.damping = 2
+        attachmentBahavior!.length = 20
+        
+        animator.addBehavior(attachmentBahavior!)
+        collision.translatesReferenceBoundsIntoBoundary = true
+        animator.addBehavior(collision)
     }
 
     
