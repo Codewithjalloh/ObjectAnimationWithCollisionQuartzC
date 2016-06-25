@@ -45,7 +45,6 @@
                     <connections>
                         <outlet property="hackBombPush" destination="Cjf-H1-MkI" id="4hv-Pq-KCk"/>
                         <outlet property="ironAttachment" destination="6Rr-Mc-8vN" id="NHY-h8-SIn"/>
-                        <outlet property="mobBall" destination="OCV-vS-Kg8" id="Oyq-co-aYz"/>
                         <outlet property="mobBallgravity" destination="OCV-vS-Kg8" id="ia8-nb-2Mj"/>
                     </connections>
                 </viewController>
