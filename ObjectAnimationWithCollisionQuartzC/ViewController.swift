@@ -54,10 +54,22 @@ class ViewController: UIViewController {
     }
     
     @IBAction func pushButton(sender: AnyObject) {
+        animator.removeAllBehaviors()
+        let push = UIPushBehavior(items: [self.mobBallgravity, self.ironAttachment, self.hackBombPush], mode: .Instantaneous)
+        push.magnitude = 2
+        
+        animator.addBehavior(push)
+        
+        collision = UICollisionBehavior(items: [self.hackBombPush, self.mobBallgravity, self.ironAttachment])
+        collision.translatesReferenceBoundsIntoBoundary = true
+        animator.addBehavior(collision)
+        
     }
     
     
     @IBAction func attchmentButton(sender: AnyObject) {
+        animator.removeAllBehaviors()
+        
     }
 
     
