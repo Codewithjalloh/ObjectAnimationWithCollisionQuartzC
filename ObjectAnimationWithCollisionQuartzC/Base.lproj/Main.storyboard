@@ -20,24 +20,41 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OCV-vS-Kg8">
                                 <rect key="frame" x="176" y="124" width="50" height="50"/>
                                 <state key="normal" image="asset_0.png"/>
+                                <connections>
+                                    <action selector="gravityButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6aH-Eg-69r"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Rr-Mc-8vN">
                                 <rect key="frame" x="137" y="283" width="119" height="89"/>
                                 <state key="normal" image="asset_218.png"/>
+                                <connections>
+                                    <action selector="attchmentButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k4P-tv-CfV"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cjf-H1-MkI">
                                 <rect key="frame" x="171" y="203" width="61" height="51"/>
                                 <state key="normal" image="asset_37.png"/>
+                                <connections>
+                                    <action selector="pushButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mxN-D8-SOD"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
+                        <outlet property="hackBombPush" destination="Cjf-H1-MkI" id="4hv-Pq-KCk"/>
+                        <outlet property="ironAttachment" destination="6Rr-Mc-8vN" id="NHY-h8-SIn"/>
                         <outlet property="mobBall" destination="OCV-vS-Kg8" id="Oyq-co-aYz"/>
+                        <outlet property="mobBallgravity" destination="OCV-vS-Kg8" id="ia8-nb-2Mj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="6AH-40-H5v">
+                    <connections>
+                        <action selector="handleAttchmentPanGesture:" destination="BYZ-38-t0r" id="OKf-4d-Upb"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="885" y="294"/>
         </scene>
